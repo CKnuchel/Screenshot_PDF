@@ -9,7 +9,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 
 def ocr_funktion(screenshotFolder, screenshotCount, ausgabeName):
     #Bilder in PDF umwandeln mit OCR
-    print("OCR wird angewendet, dass kann ein Moment dauern")
+    print("OCR is being applied, this may take a moment")
     for i in range(0, screenshotCount):
         pdf = pytesseract.image_to_pdf_or_hocr(screenshotFolder + "/screenshot" + str(i) + ".png", extension="pdf")
         with open(screenshotFolder + "/screenshot" + str(i) + ".pdf", "w+b") as f:
@@ -34,4 +34,4 @@ def ocr_funktion(screenshotFolder, screenshotCount, ausgabeName):
     for i in range(0, screenshotCount):
         os.remove(screenshotFolder + "/screenshot" + str(i) + ".pdf")
     
-    print("OCR abgeschlossen")
+    print("OCR completed")
