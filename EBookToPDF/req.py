@@ -26,15 +26,15 @@ def ocr():
         os.system("python3 -m pip install -U PdfMerger")
 
 
-a = input("OCR-Pakete mit installieren? j/n: ")
+a = input("Install OCR packages with? y/n:  ")
 
-if a == "j":
-    print("Standartpakete werden installiert")
+if a == "y" or a == "Y":
+    print("Standard packages are installed")
     install()
-    print("OCR-Pakete werden installiert")
+    print("OCR packages are installed")
     ocr()
 else:
     install()
     
-print("Installation abgeschlossen")
+print("Installation completed")
 
