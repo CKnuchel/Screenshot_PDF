@@ -9,7 +9,7 @@ def pathSelection():
     root.update()
     folder_selected = filedialog.askdirectory()
     if folder_selected == "":
-        print("Kein Ordner ausgewählt")
+        print("No folder selected")
         exit()
     root.destroy()
     return folder_selected
