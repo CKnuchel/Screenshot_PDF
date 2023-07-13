@@ -1,4 +1,0 @@
-https://github.com/UB-Mannheim/tesseract/wiki
-
-https://www.python.org/downloads/windows/
-
