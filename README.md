@@ -32,7 +32,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  python3 ./req.py
+  pip install -r ./requirements.txt
 ```
 
 Start the Programm
