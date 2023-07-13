@@ -80,9 +80,9 @@ if pdf == "y" or pdf == "j" and ocr == "j" or ocr == "y":
         ocr_funktion(screenshotFolderString, screenshotCount, ausgabeName)
     except:
         print("Make sure that Tesseract is installed")
-        print("")
+        print("C:\Program Files\Tesseract-OCR\tesseract.exe")
     
 else:
-    print("PDF nicht erstellt")
+    print("PDF not created")
 
-print("Programm beendet")
+print("Programme ended")
