@@ -85,4 +85,4 @@ if pdf == "y" or pdf == "j" and ocr == "j" or ocr == "y":
 else:
     print("PDF not created")
 
-print("Programme ended")
+print("Program ended")
