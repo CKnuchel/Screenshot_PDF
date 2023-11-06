@@ -34,6 +34,7 @@ pages = input("How many pages does the document have? ")
 ausgabeName = input("What should the file be called? (without spaces and extension) ")
 print(fill)
 
+print("Select the area to be captured, in px")
 x = input("x (upper left corner): ")
 y = input("y (upper left corner): ")
 b = input("x (upper right corner): ")
