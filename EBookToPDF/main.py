@@ -6,6 +6,19 @@ import pyautogui
 from folder import pathSelection
 from ocr import *
 
+# Key to switch to the next page (Variants with Arrow Keys or other keys possible)
+page_key = "right"
+# page_key = "down"
+# page_key = "space"
+# page_key = "enter"
+# pake_key = "pageup"
+# page_key = "pagedown"
+# page_key = "w"
+# page_key = "s"
+# page_key = "a"
+# page_key = "d"
+
+
 fill = "---------------------------------------------------------------------------------------------------------------"
 
 print("Start...")
@@ -40,7 +53,7 @@ time.sleep(5)
 
 while screenshotCount < int(pages):
     screenshot([x, y, width, height])
-    pyautogui.press("right")
+    pyautogui.press(page_key)
     screenshotCount += 1
     time.sleep(1)
 
