@@ -1,15 +1,12 @@
-import os
 import time
-from folder import pathSelection
-import pyautogui
+
 import fpdf
-import pytesseract
-from pdf2image import convert_from_path
-import PyPDF2
-import io
+import pyautogui
+
+from folder import pathSelection
 from ocr import *
 
-fill = "------------------------------------------------------------------------------------------------------------------------"
+fill = "---------------------------------------------------------------------------------------------------------------"
 
 print("Start...")
 print(fill)
@@ -24,8 +21,6 @@ pages = input("How many pages does the document have? ")
 ausgabeName = input("What should the file be called? (without spaces and extension) ")
 print(fill)
 
-
-
 x = input("x (upper left corner): ")
 y = input("y (upper left corner): ")
 b = input("x (upper right corner): ")
@@ -33,11 +28,13 @@ h = input("y (lower left corner): ")
 width = int(b) - int(x)
 height = int(h) - int(y)
 
+
 def screenshot(selection):
-    screenshot = pyautogui.screenshot(region=(x, y, width, height))
+    screenshot: object = pyautogui.screenshot(region=(x, y, width, height))
     screenshot.save(target + "/screenshot" + str(screenshotCount) + ".png")
 
-print("In 5 seconds it starts, switch to the screen you want to capture")
+
+print("Starts in 5 seconds, switch to the screen you want to capture")
 print(fill)
 time.sleep(5)
 
@@ -52,7 +49,9 @@ pdf = input().lower()
 
 if pdf == "j" or pdf == "y":
     print("Do you want to use OCR? (y/n)")
-    ocr = input().lower()
+    ocr: str = input().lower()
+    if ocr == "":
+        ocr = "n"
     print(fill)
 
 if pdf == "j" or pdf == "y" and ocr == "n":
@@ -63,25 +62,25 @@ if pdf == "j" or pdf == "y" and ocr == "n":
     pdf.output(target + "/" + ausgabeName + ".pdf", "F")
     print("PDF created")
 
-    #Löschen der Screenshots auf Windows
+    # Löschen der Screenshots auf Windows
     if os.name == "nt":
         for i in range(0, screenshotCount):
             os.remove(target + "/screenshot" + str(i) + ".png")
 
-    #Löschen der Screenshots auf Linux
+    # Löschen der Screenshots auf Linux
     if os.name == "posix":
         for i in range(0, screenshotCount):
             os.system("rm " + target + "/screenshot" + str(i) + ".png")
 
     print("Screenshots deleted")
-    
-if pdf == "y" or pdf == "j" and ocr == "j" or ocr == "y": 
+
+if pdf == "y" or pdf == "j" and ocr == "j" or ocr == "y":
     try:
         ocr_funktion(screenshotFolderString, screenshotCount, ausgabeName)
     except:
         print("Make sure that Tesseract is installed")
         print("C:\Program Files\Tesseract-OCR\tesseract.exe")
-    
+
 else:
     print("PDF not created")
 

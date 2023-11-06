@@ -1,8 +1,8 @@
-import os
 from tkinter import *
 from tkinter import filedialog
 
-#Create Window to select a target folder
+
+# Create Window to select a target folder
 def pathSelection():
     root = Tk()
     root.withdraw()
